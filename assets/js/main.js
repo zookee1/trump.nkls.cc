@@ -68,7 +68,7 @@ function konamiCode(e) {
 
     if(keyCode === konami_keys[konami_index++]) {
         if (konami_index === konami_keys.length) {
-        	window.location('http://www.savethechildren.org.uk/about-us/emergencies/syria-appeal')
+        	window.location.href = 'http://www.savethechildren.org.uk/about-us/emergencies/syria-appeal';
         }
     } else {
         konami_index = 0;
