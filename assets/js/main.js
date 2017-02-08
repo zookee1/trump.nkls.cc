@@ -21,7 +21,7 @@ updateClaim = function(inauguration, today) {
 }
 
 getPercentageOfPresidency = function(inauguration, today, totalDays) {
-	percentage = (calcDiffFrominaugurationToToday(inauguration, today) / (totalDays/100)).toFixed(2)
+	percentage = (calcDiffFrominaugurationToToday(inauguration, today) / (totalDays/100)).toFixed(3)
 	return percentage
 }
 
@@ -69,7 +69,7 @@ function konamiCode(e) {
     if(keyCode === konami_keys[konami_index++]) {
         if (konami_index === konami_keys.length) {
         	console.log('redirecting to savethechildren.org');
-        	window.location.href = 'http://www.savethechildren.org.uk/about-us/emergencies/syria-appeal';
+        	window.location.href = 'https://twitter.com/roguepotusstaff';
         }
     } else {
         konami_index = 0;
