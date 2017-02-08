@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Trumps presidency</title>
+    <link href="https://fonts.googleapis.com/css?family=Fira+Sans|Lato" rel="stylesheet">
+    <link href="assets/css/style.css" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0">
+
+    <meta property="og:url"                content="http://trump.nkls.cc" />
+    <meta property="og:type"               content="website" />
+    <meta property="og:title"              content="Trumps presidency" />
+    <meta property="og:description"        content="How far are we into Trumps presidency?" />
+    <meta property="og:image"              content="http://trump.nkls.cc/assets/img/trump.jpg" />
+</head>
+<body>
+
+<div id="wrapper">
+    <h1>How far are we into Trumps presidency, if he gets elected a second time?</h1>
+    <p>
+        Today is day <span id="currentDay"></span> of <span id="totalDays"></span>* total days.
+    </p>
+
+    <div class="progress">
+        <b class="progress__bar">
+		    <span class="progress__text">
+		      <em>0%</em>
+		    </span>
+        </b>
+    </div>
+
+    <p class="hint">
+        * days from Trumps inauguration to the inauguration after next (01/20/2025).
+    </p>
+
+    <a id="savethechildren"
+       href="https://secure.savethechildren.org/site/c.8rKLIXMGIpI4E/b.9311303/k.5B10/Donate_to_the_Child_Refugee_Crisis_Relief_Fund/apps/ka/sd/donor.asp"
+       onclick="javascript:_paq.push(['trackEvent', 'Link', 'savethechildren', 'clicked']);"
+       target="_blank">
+        <img src="assets/img/stc.svg" alt="">
+    </a>
+</div>
+
+<div class="footer">
+        <span>
+            <a href="/" onclick="javascript:_paq.push(['trackEvent', 'Link', 'back to one administration', 'clicked']);">back to one administration</a>
+            // one-day-project by <a href="http://twitter.com/niklasmeyer" onclick="javascript:_paq.push(['trackEvent', 'Link', '@niklasmeyer', 'clicked']);" target="_blank">@niklasmeyer</a>
+            // <a href="https://github.com/zookee1/js-konami-code" onclick="javascript:_paq.push(['trackEvent', 'Link', 'komanicode github', 'clicked']);" target="_blank">#konamicode</a>
+            // tracking powered by piwik
+        </span>
+</div>
+
+<script
+        src="https://code.jquery.com/jquery-3.1.1.min.js"
+        integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+        crossorigin="anonymous"></script>
+
+<script
+        src="assets/js/main.js"></script>
+
+
+<script>
+    var administrations = 2,
+        $progress = $(".progress"),
+        $bar = $(".progress__bar"),
+        $text = $(".progress__text"),
+        percent = getPercentageOfPresidency(inaugurationDay, today, administrations),
+        update,
+        resetColors,
+        speed = 200,
+        orange = 35,
+        yellow = 70,
+        green = 90,
+        timer;
+
+    updateClaim(inaugurationDay, today, administrations)
+
+</script>
+
+<!--Start Cookie Script-->
+<script type="text/javascript" charset="UTF-8" src="http://chs03.cookie-script.com/s/0081d71a3325834d88b41f20e54b3836.js"></script>
+<!--End Cookie Script-->
+
+<!-- Piwik -->
+<script type="text/javascript">
+    var _paq = _paq || [];
+    // tracker methods like "setCustomDimension" should be called before "trackPageView"
+    _paq.push(['trackPageView']);
+    _paq.push(['enableLinkTracking']);
+    (function() {
+        var u="//piwik.nkls.cc/";
+        _paq.push(['setTrackerUrl', u+'piwik.php']);
+        _paq.push(['setSiteId', '1']);
+        var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+        g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+    })();
+</script>
+<!-- End Piwik Code -->
+</body>
+</html>

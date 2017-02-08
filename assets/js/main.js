@@ -1,26 +1,24 @@
 
 var totalDays = 1461;
+var totalDays2Administrations = 2923;
 var today = new Date();
 var inaugurationDay = new Date("01/20/2017");
 
-function calcDiffFrominaugurationToToday(inauguration, today) {
+calcDiffFromInaugurationToToday = function(inauguration, today) {
 	var diff = Math.abs(inauguration.getTime() - today.getTime());
 	return Math.ceil(diff / (1000 * 3600 * 24));
 }
 
-updateClaim = function(inauguration, today) {
-	currentDay = calcDiffFrominaugurationToToday(inauguration, today)
+updateClaim = function(inauguration, today, administrations) {
+	currentDay = calcDiffFromInaugurationToToday(inauguration, today)
 	document.getElementById('currentDay').innerHTML = currentDay
-	document.getElementById('totalDays').innerHTML = totalDays
+	document.getElementById('totalDays').innerHTML = (administrations === 1 ? totalDays : totalDays2Administrations);
 }
 
-getPercentageOfPresidency = function(inauguration, today, totalDays) {
-	percentage = (calcDiffFrominaugurationToToday(inauguration, today) / (totalDays/100)).toFixed(3)
+getPercentageOfPresidency = function(inauguration, today, administrations) {
+	percentage = (calcDiffFromInaugurationToToday(inauguration, today) / ((administrations === 1 ? totalDays : totalDays2Administrations)/100)).toFixed(3)
 	return percentage
 }
-
-
-updateClaim(inaugurationDay, today)
 
 
 
@@ -62,18 +60,6 @@ function konamiCode(e) {
 // BattleNet progress bar
 // Thanks to https://twitter.com/simeydotme
 // Check out https://codepen.io/simeydotme/pen/IrGqz
-
-var $progress = $(".progress"),
-    $bar = $(".progress__bar"),
-    $text = $(".progress__text"),
-    percent = getPercentageOfPresidency(inaugurationDay, today, totalDays),
-    update,
-    resetColors,
-    speed = 200,
-    orange = 35,
-    yellow = 70,
-    green = 90,
-    timer;
 
 resetColors = function() {
   
@@ -128,8 +114,8 @@ update = function() {
 };
 
 setTimeout( function() {
-  
+
   $progress.addClass("progress--active");
   update();
-  
+
 },1000);

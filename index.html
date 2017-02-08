@@ -20,13 +20,13 @@
 			Today is day <span id="currentDay"></span> of <span id="totalDays"></span>* total days.
 		</p>
 
-		<div class="progress">
-		  <b class="progress__bar">
+        <div class="progress">
+            <b class="progress__bar">
 		    <span class="progress__text">
 		      <em>0%</em>
 		    </span>
-		  </b>
-		</div>
+            </b>
+        </div>
 
 		<p class="hint">
 			* days from Trumps inauguration to the next inauguration (01/20/2021).
@@ -42,7 +42,8 @@
 
     <div class="footer">
         <span>
-            one-day-project by <a href="http://twitter.com/niklasmeyer" onclick="javascript:_paq.push(['trackEvent', 'Link', '@niklasmeyer', 'clicked']);" target="_blank">@niklasmeyer</a>
+            <a href="/twoAdministrations.html" onclick="javascript:_paq.push(['trackEvent', 'Link', 'what about two administrations?', 'clicked']);">what about two administrations?</a>
+            // one-day-project by <a href="http://twitter.com/niklasmeyer" onclick="javascript:_paq.push(['trackEvent', 'Link', '@niklasmeyer', 'clicked']);" target="_blank">@niklasmeyer</a>
             // <a href="https://github.com/zookee1/js-konami-code" onclick="javascript:_paq.push(['trackEvent', 'Link', 'komanicode github', 'clicked']);" target="_blank">#konamicode</a>
             // tracking powered by piwik
         </span>
@@ -55,6 +56,23 @@
 
 	<script
 		src="assets/js/main.js"></script>
+
+    <script>
+        var administrations = 1,
+                $progress = $(".progress"),
+                $bar = $(".progress__bar"),
+                $text = $(".progress__text"),
+                percent = getPercentageOfPresidency(inaugurationDay, today, administrations),
+                update,
+                resetColors,
+                speed = 200,
+                orange = 35,
+                yellow = 70,
+                green = 90,
+                timer;
+
+        updateClaim(inaugurationDay, today, administrations)
+    </script>
 
     <!--Start Cookie Script-->
     <script type="text/javascript" charset="UTF-8" src="http://chs03.cookie-script.com/s/0081d71a3325834d88b41f20e54b3836.js"></script>

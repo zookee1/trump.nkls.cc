@@ -16,8 +16,7 @@ h1 {
 
 #wrapper {
   width: 270px;
-  margin-top: -100px;
-  margin-left: -161px;
+  transform: translate(-50%, -50%);
   position: absolute;
   top: 50%;
   left: 50%;
@@ -32,7 +31,7 @@ h1 {
   }
 
   #wrapper {
-    margin-top: 50px;
+    transform: translate(-50%, 0);
     top: 0%;
   }
 }
@@ -43,7 +42,7 @@ h1 {
   }
 
   #wrapper {
-    margin-top: 50px;
+    transform: translate(-50%, 0);
     top: 0%;
   }
 }
